@@ -1,13 +1,22 @@
-function HomePage() {
+function Title(props) {
+  const Tag = props.tag
   return (
-    <div>
-      <h1>Welcome to Next.js!</h1>
-      <h2>Welcome to Next.js!</h2>
+    <>
+      <Tag>{props.children}</Tag>
       <style jsx>{`
-        h1 {
+        ${Tag} {
           color: red;
         }
       `}</style>
+    </>
+  )
+}
+
+function HomePage() {
+  return (
+    <div>
+      <Title tag="h2">Welcome to Next.js! Title</Title>
+      <h2>Welcome to Next.js! H2</h2>
     </div>
   )
 }
