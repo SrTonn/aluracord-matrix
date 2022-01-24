@@ -1,3 +1,5 @@
+import appConfig from '../config.json'
+
 function GlobalStyle() {
   return (
     <style global jsx>{`
@@ -40,7 +42,9 @@ function Title(props) {
       <Tag>{props.children}</Tag>
       <style jsx>{`
         ${Tag} {
-          color: red;
+          color: ${appConfig.theme.colors.neutrals['000']};
+          font-size: 24px;
+          font-weight: 600;
         }
       `}</style>
     </>
@@ -52,7 +56,7 @@ function HomePage() {
     <div>
       <GlobalStyle />
       <Title tag="h2">Welcome to Next.js! Title</Title>
-      <h2>Welcome to Next.js! H2</h2>
+      <h2>Discord - Alura Matrix</h2>
     </div>
   )
 }
